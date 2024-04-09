@@ -1,0 +1,12 @@
+<h1>Carrito de compra</h1>
+<ul>
+    {{#each cart.products}}
+        <li>
+            {{this.name}} - ${{this.price}} 
+        </li>
+    {{/each}}
+</ul>
+    <form action="/store/{{cart._id}}/purchase" method="POST">
+        <input type="submit" value="Completar compra">
+    </form>
+</div>

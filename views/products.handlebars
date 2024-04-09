@@ -1,0 +1,29 @@
+<h2>Bienvenido a los productos</h2>
+
+<p>Nombre: {{user.firstName}}</p>
+<p>Edad: {{user.age}}</p>
+<p>Email: {{user.email}}</p>
+
+<hr>
+
+<h1>Lista de Productos</h1>
+<ul>
+    {{#each products}}
+        <li>
+            {{this.name}} - ${{this.price}} 
+            <a href="/store/products/{{this._id}}">Ver detalles</a>
+        </li>
+    {{/each}}
+</ul>
+<div>
+    {{#if hasPrevPage}}
+        <a href="{{prevLink}}">Anterior</a>
+    {{/if}}
+    {{#if hasNextPage}}
+        <a href="{{nextLink}}">Siguiente</a>
+    {{/if}}
+</div>
+<div>
+    <a href="/store/cart">Ver carrito</a>
+</div>
+<a href="/api/sessions/logout">Logout</a>
